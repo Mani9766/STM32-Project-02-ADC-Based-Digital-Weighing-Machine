@@ -1,0 +1,4 @@
+../Application/WeighingMachine/Src/weighing_machine.c:20:6:WeighingMachine_Init	1
+../Application/WeighingMachine/Src/weighing_machine.c:58:6:WeighingMachine_SetZero	2
+../Application/WeighingMachine/Src/weighing_machine.c:76:7:WeighingMachine_GetValue	1
+../Application/WeighingMachine/Src/weighing_machine.c:91:9:Button_IsPressed	3

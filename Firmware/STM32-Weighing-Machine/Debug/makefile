@@ -11,8 +11,11 @@ RM := rm -rf
 -include sources.mk
 -include Startup/subdir.mk
 -include Src/subdir.mk
+-include Middleware/Filter/Src/subdir.mk
+-include Middleware/Callibration/Src/subdir.mk
 -include Drivers/GPIO/Src/subdir.mk
 -include Drivers/ADC/Src/subdir.mk
+-include Application/WeighingMachine/Src/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)

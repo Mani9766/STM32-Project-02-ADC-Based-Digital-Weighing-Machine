@@ -60,4 +60,6 @@ void GPIO_ClearPin(GPIO_TypeDef *port, uint8_t pin);
 
 void GPIO_TogglePin(GPIO_TypeDef *port, uint8_t pin);
 
+uint8_t GPIO_ReadPin(GPIO_TypeDef *port, uint8_t pin);
+
 #endif /* GPIO_H_ */

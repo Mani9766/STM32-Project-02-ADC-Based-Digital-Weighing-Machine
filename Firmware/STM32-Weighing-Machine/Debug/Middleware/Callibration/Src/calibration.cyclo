@@ -1,0 +1,4 @@
+../Middleware/Callibration/Src/calibration.c:10:6:Calibration_Init	1
+../Middleware/Callibration/Src/calibration.c:16:6:Calibration_SetZero	1
+../Middleware/Callibration/Src/calibration.c:22:6:Calibration_SetScale	2
+../Middleware/Callibration/Src/calibration.c:37:7:Calibration_GetWeight	1

@@ -19,37 +19,41 @@
 #include <stdint.h>
 #include "gpio.h"
 #include "adc.h"
+#include "moving_average.h"
+#include "calibration.h"
+#include "weighing_machine.h"
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
-uint16_t adc_output[100];
+#define FILTER_SIZE    5U
+
+uint16_t filterBuffer[FILTER_SIZE];
+MovingAverageFilter_t filter;
+
+uint16_t raw_adc[100];
+uint16_t filtered_adc[100];
+
+Calibration_t calibration;
 
 
 int main(void)
 {
-	GPIO_ConfigPin(GPIOA,
-	                    1,
-						GPIO_ANALOG,
-						GPIO_PUSH_PULL,
-						GPIO_NO_PULL,
-						GPIO_LOW_SPEED);
+	float value;
 
-	ADC_Init(ADC1, ADC_CLOCK_DIV4, Bit_Resolution_6, Right_Alignment,
-			Scan_disable, Cont_Conversion, ADC_En);
-
-	ADC_ConfigChannel(ADC1, 1, Cycles_15, conv_seq_1, 1);
-
-	ADC_StartConversion(ADC1);
-
-	uint16_t i = 0;
+	WeighingMachine_Init();
 
     /* Loop forever */
 	for(;;){
-		ADC_WaitForConversion(ADC1);
-		adc_output[i] = ADC_ReadData(ADC1);
-		i = (i + 1U) % 100U;
+
+        if(Button_IsPressed())
+        {
+            WeighingMachine_SetZero();
+        }
+
+        value = WeighingMachine_GetValue();
+
 	}
 }
 

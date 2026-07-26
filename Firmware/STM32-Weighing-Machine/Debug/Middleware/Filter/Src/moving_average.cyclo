@@ -1,0 +1,3 @@
+../Middleware/Filter/Src/moving_average.c:10:6:MovingAverage_Init	2
+../Middleware/Filter/Src/moving_average.c:30:6:MovingAverage_AddSample	2
+../Middleware/Filter/Src/moving_average.c:47:10:MovingAverage_GetValue	2

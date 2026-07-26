@@ -1,5 +1,8 @@
+"./Application/WeighingMachine/Src/weighing_machine.o"
 "./Drivers/ADC/Src/adc.o"
 "./Drivers/GPIO/Src/gpio.o"
+"./Middleware/Callibration/Src/calibration.o"
+"./Middleware/Filter/Src/moving_average.o"
 "./Src/main.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"

@@ -129,4 +129,7 @@ void GPIO_TogglePin(GPIO_TypeDef *port, uint8_t pin)
 	port->ODR ^= (1<<pin);
 }
 
-
+uint8_t GPIO_ReadPin(GPIO_TypeDef *port, uint8_t pin)
+{
+    return (uint8_t)((port->IDR >> pin) & 0x01U);
+}
